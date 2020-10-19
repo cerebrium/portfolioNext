@@ -1,0 +1,27 @@
+// background image
+.homeContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url('./images/backgroundPortfolioColors.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+// dark overlay and grid
+.contentContainer {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 75px auto;
+  grid-template-areas: 
+  "nav"
+  "body"
+  ;
+  background-color: rgba(0, 0, 0, 0.521);
+  height: 100vh;
+  width: 100vw;
+}
