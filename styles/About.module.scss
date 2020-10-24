@@ -1,0 +1,242 @@
+%centerThings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutMainContainer {
+    background-color: rgb(29, 29, 29);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // title box
+    .aboutTitleBox {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: rgb(207, 205, 205);
+        margin-top: 20px;
+        font-size: 3em;
+
+        @keyframes grettingText {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @-webkit-keyframes grettingText {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes grettingTextNick {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @-webkit-keyframes grettingTextNick {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        //greeting text
+        .greetingStyle {
+            animation: grettingText 1.1s;
+        }
+
+        //greeting text
+        .greetingStyleNick {
+            opacity: 1;
+            animation: grettingTextNick 1.1s forwards;
+        }
+    }
+
+    // content
+    @keyframes makeBoxHere {
+        0% {
+            height: 0px;
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            height: 700px;
+        }
+    }
+    @-webkit-keyframes makeBoxHere {
+        0% {
+            height: 0px;
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            height: 700px;
+        }
+    }
+    .aboutContentContainer {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        opacity: 0;
+        animation: makeBoxHere forwards;
+        animation-duration: 8s;
+        animation-delay: 9s;
+        text-align: center;
+        margin-top: 40px;
+        width: 900px;
+        color:rgb(207, 205, 205);
+        font-size: 1.5em;
+        overflow: hidden;
+    }
+}
+%textContaineCircles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(207, 205, 205);
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+}
+%textContaineCircles:hover {
+    border-radius: 50%;
+    background-color: rgb(68, 67, 67);
+}
+@keyframes homeMainBoxEffect {
+    0% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        min-height: 0px;
+        min-width: 0px;
+        padding: 0px;
+        background-color: white;
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+    90% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        min-height: 0px;
+        min-width: 0px;
+        background-color: white;
+        padding: 0px;
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+    100% {
+        opacity: 1;
+        padding: 0;
+        min-height: 200px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid rgb(207, 205, 205);
+        background-color: rgba(207, 205, 205, 0.123);
+    }
+}
+@-webkit-keyframes homeMainBoxEffect {
+    0% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        min-height: 0px;
+        min-width: 0px;
+        padding: 0px;
+        background-color: white;
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+    90% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        min-height: 0px;
+        min-width: 0px;
+        background-color: white;
+        padding: 0px;
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+    100% {
+        opacity: 1;
+        padding: 0;
+        min-height: 200px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid rgb(207, 205, 205);
+        background-color: rgba(207, 205, 205, 0.123);
+    }
+}
+@keyframes delayVisibility {
+    0% {
+        opacity: 0;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.circleContainerLeft {
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px;
+    height: 400px;
+    top: 5%;
+    left: 2%;
+    @extend %centerThings;
+    .aboutContainer {
+        border-radius: 50%;
+        animation: homeMainBoxEffect 17s .5s forwards;
+        animation-delay: 1s;
+        .textContainer {
+            @extend %textContaineCircles;
+            animation: delayVisibility;
+            animation-fill-mode: forwards;
+            animation-duration: 20.5s;
+            animation-delay: 0s;
+        }
+    }
+}
+.circleContainerRight {
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px;
+    height: 400px;
+    top: 5%;
+    right: 2%;
+    @extend %centerThings;
+    .workContainer {
+        border-radius: 50%;
+        animation: homeMainBoxEffect 16s .5s forwards;
+        animation-delay: 1s;
+        .textContainer {
+            @extend %textContaineCircles;
+            animation: delayVisibility;
+            animation-duration: 17.5s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
