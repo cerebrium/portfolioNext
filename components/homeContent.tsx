@@ -9,11 +9,12 @@ const HomeContent: React.FunctionComponent = () => {
 
     // local state
     const [ aboutClassname, setAboutClassName ] = useState<string>('aboutContainer')
+    const [ workClassname, setWorkClassName ] = useState<string>('workContainer')
 
     useEffect( () => {
         if (styles) {
-            console.log(styles)
             setAboutClassName(styles.aboutContainer)
+            setWorkClassName(styles.workContainer)
         }
     }, [])
 
@@ -22,6 +23,14 @@ const HomeContent: React.FunctionComponent = () => {
         setAboutClassName(styles.aboutContainerMakeBig)
         setTimeout( () => {
             router.push('/about')
+        }, 2800)
+    }
+
+    // function for changing the classname for about
+    const handleWorkClick = () => {
+        setWorkClassName(styles.aboutContainerMakeBig)
+        setTimeout( () => {
+            router.push('/work')
         }, 2800)
     }
 
@@ -62,7 +71,10 @@ const HomeContent: React.FunctionComponent = () => {
                 </div>
             </div>
             <div className={styles.circleContainerRight}>
-                <div className={styles.workContainer}>
+                <div 
+                    className={workClassname}
+                    onClick={handleWorkClick}
+                >
                     <div className={styles.textContainer}>
                         <h2>Work</h2>
                     </div>

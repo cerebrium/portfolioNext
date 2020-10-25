@@ -256,6 +256,23 @@
     }
 }
 
+@keyframes dimText {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0
+    }
+}
+@-webkit-keyframes dimText {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0
+    }
+}
+
 .aboutContainerMakeBig {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     animation: makeCircleWholeScreen 3s forwards;
@@ -269,6 +286,10 @@
     background-color: rgba(29, 29, 29, 0.616);
     .textContainer {
         @extend %textContaineCircles;
+        animation: dimText;
+        animation-duration: .5s;
+        animation-delay: 2.3s;
+        animation-fill-mode: forwards;
         opacity: 1;
     }
 }
