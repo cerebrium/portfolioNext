@@ -8,18 +8,20 @@ const About = () => {
 
     // local state
     const [ greeting, setGreeting ] = useState<JSX.Element>(null)
-    const [ aboutClassname, setAboutClassName ] = useState<string>('aboutContainer')
+    const [ homeClassname, setHomeClassName ] = useState<string>('aboutContainer')
 
     useEffect( () => {
         if (styles) {
-            console.log(styles)
-            setAboutClassName(styles.aboutContainer)
+            setHomeClassName(styles.aboutContainer)
         }
     }, [])
 
     // function for changing the classname for about
     const handleHomeClick = () => {
-        router.push('/')
+        setHomeClassName(styles.homeMakeBig)
+        setTimeout( () => {
+            router.push('/')
+        }, 3000)
     }
 
 
@@ -87,7 +89,7 @@ const About = () => {
         <div className={styles.aboutMainContainer}>
             <div className={styles.circleContainerLeft}>
                 <div 
-                    className={aboutClassname}
+                    className={homeClassname}
                     onClick={handleHomeClick}
                 >
                     <div className={styles.textContainer}>

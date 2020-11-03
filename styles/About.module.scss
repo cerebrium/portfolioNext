@@ -6,11 +6,12 @@
 
 .aboutMainContainer {
     background-color: rgb(29, 29, 29);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     // title box
     .aboutTitleBox {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -198,6 +199,58 @@
         opacity: 1;
     }
 }
+
+// animation for maiking big
+@keyframes makeCircleWholeScreen {
+    0% {
+        border-radius: 50%;
+        z-index: 2;
+        padding: 0;
+        min-width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        border: 2px solid rgb(255, 255, 255);
+        background-image: url('./images/backgroundPortfolioColors.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    100% {
+        z-index: 2;
+        border-radius: 50%;
+        padding: 0;
+        min-width: 10000px;
+        height: 10000px;
+        border-radius: 50%;
+        background-image: url('./images/backgroundPortfolioColors.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
+@keyframes makeCircleWholeScreenBlack {
+    0% {
+        border-radius: 50%;
+        z-index: 4;
+        padding: 0;
+        min-width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        border: 2px solid rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.521);
+    }
+    100% {
+        z-index: 4;
+        border-radius: 50%;
+        padding: 0;
+        min-width: 10000px;
+        height: 10000px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.521);
+    }
+}
 .circleContainerLeft {
     position: absolute;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -216,6 +269,13 @@
             animation-fill-mode: forwards;
             animation-duration: 20.5s;
             animation-delay: 0s;
+        }
+    }
+    // animatino to make big
+    .homeMakeBig {
+        animation: makeCircleWholeScreen 3s forwards;
+        .textContainer {
+            animation: makeCircleWholeScreenBlack 3s forwards;
         }
     }
 }

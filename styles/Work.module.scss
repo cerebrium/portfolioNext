@@ -1,3 +1,21 @@
+@keyframes delayVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes delayVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .workMainContainer {
     background-color: rgb(29, 29, 29);
     width: 100vw;
@@ -5,4 +23,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    // title
+    .workTitle {
+        opacity: 0;
+        font-size: 2em;
+        color: white;
+        animation: delayVisibility;
+        animation-duration: 1s;
+        animation-delay: .5s;
+        animation-fill-mode: forwards;
+    }
+    // display container
+    .workDisplayContainer {
+        display: flex;
+        color: white;
+        margin-top: 50px;
+        width: 100vw;
+        height: 90vh;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        font-size: 1.2em;
+        .lowerImageContainer {
+            display: flex;
+            justify-content: space-evenly;
+            .lowerLeftImage {
+                height: 200px;
+                max-width: 250px;
+            }
+        }
+        .workImages {
+            max-width: 500px;
+            max-height: 500px;
+        }
+    }
 }
