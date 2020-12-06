@@ -6,8 +6,8 @@
 
 .aboutMainContainer {
     background-color: rgb(29, 29, 29);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,7 +204,7 @@
 @keyframes makeCircleWholeScreen {
     0% {
         border-radius: 50%;
-        z-index: 2;
+        z-index: 4;
         padding: 0;
         min-width: 400px;
         height: 400px;
@@ -217,7 +217,7 @@
         background-size: cover;
     }
     100% {
-        z-index: 2;
+        z-index: 4;
         border-radius: 50%;
         padding: 0;
         min-width: 10000px;
@@ -252,6 +252,7 @@
     }
 }
 .circleContainerLeft {
+    z-index: 2;
     position: absolute;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 400px;
@@ -280,6 +281,7 @@
     }
 }
 .circleContainerRight {
+    z-index: 2;
     position: absolute;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 400px;
