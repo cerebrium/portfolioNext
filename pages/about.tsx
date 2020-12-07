@@ -6,9 +6,15 @@ const About = () => {
     // allow for routing
     const router = useRouter()
 
-    // local state
+    // local state left
     const [ greeting, setGreeting ] = useState<JSX.Element>(null)
     const [ homeClassname, setHomeClassName ] = useState<string>('aboutContainer')
+    const [ leftTextAppear, setLeftTextAppear ] = useState<string>(styles.leftTextAppear)
+
+    // right style
+    const [ rightClassName, setRightClassName ] = useState<string>(styles.workContainer)
+    const [ rightOverAllClassName, setRightOverAllClassName ] = useState<string>(styles.circleContainerRight)
+    const [ rightTextAppear, setRightTextAppear ] = useState<string>(styles.rightTextAppear)
 
     useEffect( () => {
         if (styles) {
@@ -19,9 +25,21 @@ const About = () => {
     // function for changing the classname for about
     const handleHomeClick = () => {
         setHomeClassName(styles.homeMakeBig)
+        setRightOverAllClassName(styles.dissapearPlease)
+        setLeftTextAppear(styles.leftAppear)
         setTimeout( () => {
             router.push('/')
-        }, 3000)
+        }, 5000)
+    }
+    
+    // function for changing the classname for about
+    const rightClick = () => {
+        setRightClassName(styles.homeMakeBigDark)
+        setHomeClassName(styles.dissapearPleaseLeft)
+        setRightTextAppear(styles.rightAppear)
+        setTimeout( () => {
+            router.push('/work')
+        }, 500000)
     }
 
 
@@ -87,23 +105,6 @@ const About = () => {
 
     return (
         <div className={styles.aboutMainContainer}>
-            <div className={styles.circleContainerLeft}>
-                <div 
-                    className={homeClassname}
-                    onClick={handleHomeClick}
-                >
-                    <div className={styles.textContainer}>
-                        <h2>Home</h2>
-                    </div>
-                </div>
-            </div>
-            <div className={styles.circleContainerRight}>
-                <div className={styles.workContainer}>
-                    <div className={styles.textContainer}>
-                        <h2>Work</h2>
-                    </div>
-                </div>
-            </div>
             <div className={styles.aboutTitleBox}>
                 {greeting}
             </div> 
@@ -145,6 +146,32 @@ const About = () => {
                     And getting caught in the rain (from Seattle... coffee, local ipa's, and rain)<br />
                     I'm very much into health food<br />
                     I am into… scss, typescript, react, redux, python and golang
+                </div>
+            </div>
+            <div className={styles.circleContainerLeft}>
+                <div 
+                    className={homeClassname}
+                    onClick={handleHomeClick}
+                >
+                    <div className={styles.textContainer}>
+                        <h2>Home</h2>
+                    </div>
+                </div>
+                <div className={leftTextAppear}>
+                    <h2>Home</h2>
+                </div>
+            </div>
+            <div className={rightOverAllClassName}>
+                <div 
+                    className={rightClassName}
+                    onClick={rightClick}
+                >
+                    <div className={styles.textContainer}>
+                        <h2>Work</h2>
+                    </div>
+                </div>
+                <div className={rightTextAppear}>
+                    <h2>Work</h2>
                 </div>
             </div>
         </div>

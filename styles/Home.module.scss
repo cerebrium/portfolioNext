@@ -17,9 +17,8 @@
 .contentContainer {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 75px auto;
+  grid-template-rows: auto;
   grid-template-areas: 
-  "nav"
   "body"
   ;
   background-color: rgba(0, 0, 0, 0.521);

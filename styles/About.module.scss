@@ -5,15 +5,95 @@
 }
 
 .aboutMainContainer {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 10% 80%;
+    grid-template-areas: 
+    '. title .'
+    'leftCircle mainContent rightCircle'
+    ;
     background-color: rgb(29, 29, 29);
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     overflow: hidden;
+
+    @keyframes slowlyDissapear {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    // text appear
+    .leftTextAppear {
+        display: none;
+    }
+
+    .rightTextAppear {
+        display: none;
+    }
+
+    // make right go away
+    .dissapearPlease {
+        grid-area: rightCircle;
+        z-index: 2;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 100%;
+        height: 100%;
+        @extend %centerThings;
+        align-items: flex-start;
+        .workContainer {
+            border-radius: 50%;
+            animation: homeMainBoxEffect 1s .5s forwards;
+            animation-delay: 1s;
+            .textContainer {
+                @extend %textContaineCircles;
+                animation: delayVisibility;
+                animation-duration: 17.5s;
+                animation-delay: 0s;
+                animation-fill-mode: forwards;
+            }
+        }
+        animation: slowlyDissapear 1s forwards;
+    }
+
+    // make right go away
+    .dissapearPleaseLeft {
+        grid-area: leftCircle;
+        z-index: 2;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 100%;
+        height: 100%;
+        @extend %centerThings;
+        align-items: flex-start;
+        .aboutContainer {
+            border-radius: 50%;
+            animation: homeMainBoxEffect 1s .5s forwards;
+            animation-delay: 1s;
+            .textContainer {
+                @extend %textContaineCircles;
+                animation: delayVisibility;
+                animation-fill-mode: forwards;
+                animation-duration: 20.5s;
+                animation-delay: 0s;
+            }
+        }
+        // animatino to make big
+        .homeMakeBig {
+            animation: makeCircleWholeScreen 5s forwards;
+            .textContainer {
+                animation: makeCircleWholeScreenBlack 5s forwards;
+            }
+        }
+        animation: slowlyDissapear 1s forwards;
+    }
+
     // title box
     .aboutTitleBox {
+        grid-area: title;
+        text-align: center;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         color: rgb(207, 205, 205);
         margin-top: 20px;
@@ -80,7 +160,7 @@
         }
         100% {
             opacity: 1;
-            height: 700px;
+            height: 100%;
         }
     }
     @-webkit-keyframes makeBoxHere {
@@ -90,215 +170,721 @@
         }
         100% {
             opacity: 1;
-            height: 700px;
+            height: 100%;
         }
     }
     .aboutContentContainer {
+        grid-area: mainContent;
+        padding-bottom: 20px;
+        width: 100%;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         opacity: 0;
         animation: makeBoxHere forwards;
         animation-duration: 8s;
         animation-delay: 9s;
         text-align: center;
-        margin-top: 40px;
-        width: 900px;
+        margin-top: 30px;
         color:rgb(207, 205, 205);
         font-size: 1.5em;
-        overflow: hidden;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
     }
-}
-%textContaineCircles {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(207, 205, 205);
-    width: 100%;
-    height: 100%;
-    font-size: 2em;
-}
-%textContaineCircles:hover {
-    border-radius: 50%;
-    background-color: rgb(68, 67, 67);
-}
-@keyframes homeMainBoxEffect {
-    0% {
-        opacity: 0;
-        height: 0px;
-        width: 0px;
-        min-height: 0px;
-        min-width: 0px;
-        padding: 0px;
-        background-color: white;
-        border: 2px solid white;
+    %textContaineCircles {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(207, 205, 205);
+        width: 100%;
+        height: 100%;
+        font-size: 2em;
+    }
+    %textContaineCircles:hover {
         border-radius: 50%;
+        background-color: rgb(68, 67, 67);
     }
-    90% {
-        opacity: 0;
-        height: 0px;
-        width: 0px;
-        min-height: 0px;
-        min-width: 0px;
-        background-color: white;
-        padding: 0px;
-        border: 2px solid white;
-        border-radius: 50%;
+    @keyframes homeMainBoxEffect {
+        0% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        90% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
+            padding: 0px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        100% {
+            opacity: 1;
+            padding: 0;
+            min-height: 200px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid rgb(207, 205, 205);
+            background-color: rgba(207, 205, 205, 0.123);
+        }
     }
-    100% {
-        opacity: 1;
-        padding: 0;
-        min-height: 200px;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border: 2px solid rgb(207, 205, 205);
-        background-color: rgba(207, 205, 205, 0.123);
+    @-webkit-keyframes homeMainBoxEffect {
+        0% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        90% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
+            padding: 0px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        100% {
+            opacity: 1;
+            padding: 0;
+            min-height: 200px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid rgb(207, 205, 205);
+            background-color: rgba(207, 205, 205, 0.123);
+        }
     }
-}
-@-webkit-keyframes homeMainBoxEffect {
-    0% {
-        opacity: 0;
-        height: 0px;
-        width: 0px;
-        min-height: 0px;
-        min-width: 0px;
-        padding: 0px;
-        background-color: white;
-        border: 2px solid white;
-        border-radius: 50%;
+    @keyframes delayVisibility {
+        0% {
+            opacity: 0;
+        }
+        85% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-    90% {
-        opacity: 0;
-        height: 0px;
-        width: 0px;
-        min-height: 0px;
-        min-width: 0px;
-        background-color: white;
-        padding: 0px;
-        border: 2px solid white;
-        border-radius: 50%;
+    
+    // animation for maiking big
+    @keyframes makeCircleWholeScreen {
+        0% {
+            position: absolute;
+            border-radius: 50%;
+            top: 0px;
+            z-index: 4;
+            padding: 0;
+            min-width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-image: url('./images/backgroundPortfolioColors.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        100% {
+            position: absolute;
+            top: -500px;
+            z-index: 10;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 10000px;
+            height: 10000px;
+            border-radius: 50%;
+            background-image: url('./images/backgroundPortfolioColors.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
     }
-    100% {
-        opacity: 1;
-        padding: 0;
-        min-height: 200px;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border: 2px solid rgb(207, 205, 205);
-        background-color: rgba(207, 205, 205, 0.123);
+    @keyframes makeCircleWholeScreenBlack {
+        0% {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 4;
+            padding: 0;
+            min-width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.521);
+        }
+        100% {
+            position: absolute;
+            z-index: 10;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 10000px;
+            height: 10000px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.521);
+        }
     }
-}
-@keyframes delayVisibility {
-    0% {
-        opacity: 0;
+    // animation for maiking big
+    @keyframes makeCircleWholeScreenBlacker {
+        0% {
+            position: absolute;
+            border-radius: 50%;
+            top: 0px;
+            z-index: 4;
+            padding: 0;
+            min-width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0);
+        }
+        100% {
+            position: absolute;
+            top: -500px;
+            z-index: 10;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 10000px;
+            height: 10000px;
+            border-radius: 50%;
+            background-color:#1D1D1D;
+        }
     }
-    85% {
-        opacity: 0;
+    @keyframes makeAppear {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-    100% {
-        opacity: 1;
+    .circleContainerLeft {
+        grid-area: leftCircle;
+        z-index: 2;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 100%;
+        height: 100%;
+        @extend %centerThings;
+        align-items: flex-start;
+        .aboutContainer {
+            cursor: pointer;
+            border-radius: 50%;
+            animation: homeMainBoxEffect 15s .5s forwards;
+            animation-delay: 1s;
+            .textContainer {
+                @extend %textContaineCircles;
+                animation: delayVisibility;
+                animation-fill-mode: forwards;
+                animation-duration: 20.5s;
+                animation-delay: 0s;
+            }
+        }
+        // animatino to make big
+        .homeMakeBig {
+            animation: makeCircleWholeScreen 5s forwards;
+            .textContainer {
+                animation: makeCircleWholeScreenBlack 5s forwards;
+            }
+        }
+        .leftAppear {
+            animation: makeAppear 1s forwards;
+            position: absolute;
+            display: flex;
+            color: white;
+            font-size: 2em;
+            left: 90px;
+            top: 160px;
+            z-index: 20;
+        }
+    }
+    .circleContainerRight {
+        grid-area: rightCircle;
+        z-index: 2;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 100%;
+        height: 100%;
+        @extend %centerThings;
+        align-items: flex-start;
+        .workContainer {
+            cursor: pointer;
+            border-radius: 50%;
+            animation: homeMainBoxEffect 15s .5s forwards;
+            animation-delay: 1s;
+            .textContainer {
+                @extend %textContaineCircles;
+                animation: delayVisibility;
+                animation-duration: 17.5s;
+                animation-delay: 0s;
+                animation-fill-mode: forwards;
+            }
+        }
+        // animatino to make big
+        .homeMakeBigDark {
+            animation: makeCircleWholeScreenBlacker 50s forwards;
+        }
+        .rightAppear {
+            animation: makeAppear 1s forwards;
+            position: absolute;
+            display: flex;
+            color: white;
+            font-size: 2em;
+            right: 110px;
+            top: 160px;
+            z-index: 20;
+        }
     }
 }
 
-// animation for maiking big
-@keyframes makeCircleWholeScreen {
-    0% {
-        border-radius: 50%;
-        z-index: 4;
-        padding: 0;
-        min-width: 400px;
-        height: 400px;
-        border-radius: 50%;
-        border: 2px solid rgb(255, 255, 255);
-        background-image: url('./images/backgroundPortfolioColors.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-    }
-    100% {
-        z-index: 4;
-        border-radius: 50%;
-        padding: 0;
-        min-width: 10000px;
-        height: 10000px;
-        border-radius: 50%;
-        background-image: url('./images/backgroundPortfolioColors.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-    }
-}
-@keyframes makeCircleWholeScreenBlack {
-    0% {
-        border-radius: 50%;
-        z-index: 4;
-        padding: 0;
-        min-width: 400px;
-        height: 400px;
-        border-radius: 50%;
-        border: 2px solid rgb(255, 255, 255);
-        background-color: rgba(0, 0, 0, 0.521);
-    }
-    100% {
-        z-index: 4;
-        border-radius: 50%;
-        padding: 0;
-        min-width: 10000px;
-        height: 10000px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.521);
-    }
-}
-.circleContainerLeft {
-    z-index: 2;
-    position: absolute;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 400px;
-    height: 400px;
-    top: 5%;
-    left: 2%;
-    @extend %centerThings;
-    .aboutContainer {
-        border-radius: 50%;
-        animation: homeMainBoxEffect 17s .5s forwards;
-        animation-delay: 1s;
-        .textContainer {
-            @extend %textContaineCircles;
-            animation: delayVisibility;
-            animation-fill-mode: forwards;
-            animation-duration: 20.5s;
-            animation-delay: 0s;
+@media only screen and (max-width: 1100px) {
+    @keyframes homeMainBoxEffect {
+        0% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        90% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
+            padding: 0px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        100% {
+            opacity: 1;
+            padding: 0;
+            min-height: 150px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid rgb(207, 205, 205);
+            background-color: rgba(207, 205, 205, 0.123);
         }
     }
-    // animatino to make big
-    .homeMakeBig {
-        animation: makeCircleWholeScreen 3s forwards;
-        .textContainer {
-            animation: makeCircleWholeScreenBlack 3s forwards;
+    @-webkit-keyframes homeMainBoxEffect {
+        0% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        90% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
+            padding: 0px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        100% {
+            opacity: 1;
+            padding: 0;
+            min-height: 150px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid rgb(207, 205, 205);
+            background-color: rgba(207, 205, 205, 0.123);
+        }
+    }
+    @keyframes delayVisibility {
+        0% {
+            opacity: 0;
+        }
+        85% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    // animation for maiking big
+    @keyframes makeCircleWholeScreen {
+        0% {
+            border-radius: 50%;
+            z-index: 4;
+            padding: 0;
+            min-width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-image: url('./images/backgroundPortfolioColors.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        100% {
+            z-index: 4;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 10000px;
+            height: 10000px;
+            border-radius: 50%;
+            background-image: url('./images/backgroundPortfolioColors.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    @keyframes makeCircleWholeScreenBlack {
+        0% {
+            border-radius: 50%;
+            z-index: 4;
+            padding: 0;
+            min-width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.521);
+        }
+        100% {
+            z-index: 4;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 10000px;
+            height: 10000px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.521);
         }
     }
 }
-.circleContainerRight {
-    z-index: 2;
-    position: absolute;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 400px;
-    height: 400px;
-    top: 5%;
-    right: 2%;
-    @extend %centerThings;
-    .workContainer {
-        border-radius: 50%;
-        animation: homeMainBoxEffect 16s .5s forwards;
-        animation-delay: 1s;
-        .textContainer {
-            @extend %textContaineCircles;
-            animation: delayVisibility;
-            animation-duration: 17.5s;
-            animation-delay: 0s;
-            animation-fill-mode: forwards;
+
+@media only screen and (max-width: 850px) {
+    @keyframes homeMainBoxEffect {
+        0% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        90% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
+            padding: 0px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        100% {
+            opacity: 1;
+            padding: 0;
+            min-height: 100px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid rgb(207, 205, 205);
+            background-color: rgba(207, 205, 205, 0.123);
+        }
+    }
+    @-webkit-keyframes homeMainBoxEffect {
+        0% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        90% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
+            padding: 0px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        100% {
+            opacity: 1;
+            padding: 0;
+            min-height: 100px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid rgb(207, 205, 205);
+            background-color: rgba(207, 205, 205, 0.123);
+        }
+    }
+    // animation for maiking big
+    @keyframes makeCircleWholeScreen {
+        0% {
+            border-radius: 50%;
+            z-index: 4;
+            padding: 0;
+            min-width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-image: url('./images/backgroundPortfolioColors.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        100% {
+            z-index: 4;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 10000px;
+            height: 10000px;
+            border-radius: 50%;
+            background-image: url('./images/backgroundPortfolioColors.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    @keyframes makeCircleWholeScreenBlack {
+        0% {
+            border-radius: 50%;
+            z-index: 4;
+            padding: 0;
+            min-width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.521);
+        }
+        100% {
+            z-index: 4;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 10000px;
+            height: 10000px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.521);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    @keyframes homeMainBoxEffect {
+        0% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        90% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
+            padding: 0px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        100% {
+            opacity: 1;
+            padding: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid rgb(207, 205, 205);
+            background-color: rgba(207, 205, 205, 0.123);
+        }
+    }
+    @-webkit-keyframes homeMainBoxEffect {
+        0% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            padding: 0px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        90% {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
+            padding: 0px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        100% {
+            opacity: 1;
+            padding: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid rgb(207, 205, 205);
+            background-color: rgba(207, 205, 205, 0.123);
+        }
+    }
+    .aboutMainContainer {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 10% 80%;
+        grid-template-areas: 
+        '. title .'
+        'leftCircle mainContent rightCircle'
+        ;
+        .aboutTitleBox {
+            font-size: 1.5em;
+        }
+        .aboutContentContainer {
+            font-size: 1em;
+        }
+        .circleContainerLeft {
+            grid-area: leftCircle;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 20%;
+            height: 10%;
+            @extend %centerThings;
+            align-items: flex-start;
+            .aboutContainer {
+                border-radius: 50%;
+                animation: homeMainBoxEffect 17s .5s forwards;
+                animation-delay: 1s;
+                .textContainer {
+                    @extend %textContaineCircles;
+                    animation: delayVisibility;
+                    animation-fill-mode: forwards;
+                    animation-duration: 20.5s;
+                    animation-delay: 0s;
+                    font-size: 1.1em;
+                }
+            }
+            // animatino to make big
+            .homeMakeBig {
+                animation: makeCircleWholeScreen 3s forwards;
+                .textContainer {
+                    animation: makeCircleWholeScreenBlack 3s forwards;
+                }
+            }
+        }
+            // animation for maiking big
+        @keyframes makeCircleWholeScreenBlackerTwo {
+            0% {
+                position: absolute;
+                border-radius: 50%;
+                top: 0px;
+                z-index: 4;
+                padding: 0;
+                min-width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                border: 2px solid rgb(255, 255, 255);
+                background-color: rgba(0, 0, 0);
+            }
+            100% {
+                position: absolute;
+                z-index: 10;
+                border-radius: 50%;
+                padding: 0;
+                min-width: 10000px;
+                height: 10000px;
+                border-radius: 50%;
+                background-color:#1D1D1D;
+            }
+        }
+        .circleContainerRight {
+            grid-area: rightCircle;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            z-index: 2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 20%;
+            height: 10%;
+            @extend %centerThings;
+            align-items: flex-start;
+            .workContainer {
+                border-radius: 50%;
+                animation: homeMainBoxEffect 1s .5s forwards;
+                animation-delay: 1s;
+                .textContainer {
+                    @extend %textContaineCircles;
+                    animation: delayVisibility;
+                    animation-duration: 17.5s;
+                    animation-delay: 0s;
+                    animation-fill-mode: forwards;
+                    font-size: 1.1em;
+                }
+            }
+            // animatino to make big
+            .homeMakeBigDark {
+                animation: makeCircleWholeScreenBlackerTwo 50s forwards;
+            }
+            .rightAppear {
+                animation: makeAppear 1s forwards;
+                position: absolute;
+                display: flex;
+                color: white;
+                font-size: 2em;
+                right: 10px;
+                top: 160px;
+                z-index: 20;
+            }
         }
     }
 }

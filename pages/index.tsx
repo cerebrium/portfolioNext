@@ -6,7 +6,6 @@ const Home: React.FunctionComponent = () => {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.contentContainer}>
-        <Nav />
         <HomeContent />
       </div>
     </div>
