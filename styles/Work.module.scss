@@ -206,7 +206,7 @@
                 @extend %textContaineCircles;
                 animation: delayVisibility;
                 animation-fill-mode: forwards;
-                animation-duration: 2s;
+                animation-duration: 3s;
             }
         }
         .textInEffect {
@@ -452,7 +452,7 @@
             display: grid;
             overflow: auto;
             height: 100%;
-            width: 100%;
+            width: 100vw;
             grid-template-columns: 100%;
             grid-template-rows: 460px 430px 460px;
             grid-template-areas: 
@@ -464,17 +464,20 @@
                 @extend %workImagesMobile;
                 position: relative;
                 grid-area: middleContent;
+                margin-left: 10px;
             }
             
             .daveContainer {
                 @extend %workImagesMobile;
                 grid-area: leftContent;
+                margin-left: 10px;
             }
             
             .crmContainer {
                 @extend %workImagesMobile;
                 grid-area: rightContent;
                 padding-bottom: 40px;
+                margin-left: 10px;
             }
         }
     }
@@ -632,7 +635,7 @@
             overflow: scroll;
             padding: 10px;
             height: 100%;
-            width: 100%;
+            width: 100vw;
             grid-template-columns: 100%;
             grid-template-rows: 350px 350px 350px;
             grid-template-areas: 
@@ -644,17 +647,20 @@
                 @extend %workImagesMobileTwo;
                 position: relative;
                 grid-area: middleContent;
+                margin-left: -12px;
             }
             
             .daveContainer {
                 @extend %workImagesMobileTwo;
                 grid-area: leftContent;
+                margin-left: -12px;
             }
             
             .crmContainer {
                 @extend %workImagesMobileTwo;
                 grid-area: rightContent;
                 padding-bottom: 40px;
+                margin-left: -12px;
             }
         }
         .circleContainerLeft {
@@ -682,12 +688,8 @@
             z-index: 2;
             grid-area: rightCircle;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
             .workContainer {
                 margin: 10px;
-                // margin-top: 20px;
                 border-radius: 50%;
                 animation: homeMainBoxEffectTwo 1s .5s forwards;
                 animation-delay: 1s;

@@ -39,7 +39,7 @@ const About = () => {
         setRightTextAppear(styles.rightAppear)
         setTimeout( () => {
             router.push('/work')
-        }, 500000)
+        }, 5000)
     }
 
 
