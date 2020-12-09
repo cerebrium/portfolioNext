@@ -69,8 +69,8 @@ const Work: React.FunctionComponent = () => {
             <h1 className={styles.workTitle}>Work</h1>
             <div className={styles.workContainerTwo}>
                 {/* giftata */}
-                <a href="https://beta.giftata.com/">
-                    <div className={styles.giftataContainer}>
+                <div className={styles.giftataContainer}>
+                    <a href="https://beta.giftata.com/" target="_blank">
                         <h3>Giftata (Beta - current project)</h3>
                         <div>
                             <img 
@@ -95,11 +95,11 @@ const Work: React.FunctionComponent = () => {
                                 />
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
                 {/* daves designs */}
-                <a href="https://davedesigns.netlify.app/">
-                    <div className={styles.daveContainer}>
+                <div className={styles.daveContainer}>
+                    <a href="https://davedesigns.netlify.app/" target="_blank">
                         <h3>Daves Designs</h3>
                         <div>
                             <img 
@@ -124,34 +124,36 @@ const Work: React.FunctionComponent = () => {
                                 />
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
                 {/* crm */}
                 <div className={styles.crmContainer}>
-                    <h3>Crm (Desktop)</h3>
-                    <div>
-                        <img 
-                            src="/crm/crmMain.png" 
-                            alt=""
-                            className={styles.workImages}
-                        />
-                    </div>
-                    <div className={styles.lowerImageContainer}>
+                    <a href="https://portfoliocrm.netlify.app/" target="_blank">
+                        <h3>Crm (Desktop)</h3>
                         <div>
                             <img 
-                            src="/crm/crmRota.png" 
-                            alt=""
-                            className={styles.lowerLeftImage}
+                                src="/crm/crmMain.png" 
+                                alt=""
+                                className={styles.workImages}
                             />
                         </div>
-                        <div>
-                            <img 
-                            src="/crm/crmDailyService.png" 
-                            alt=""
-                            className={styles.lowerLeftImage}
-                            />
+                        <div className={styles.lowerImageContainer}>
+                            <div>
+                                <img 
+                                src="/crm/crmRota.png" 
+                                alt=""
+                                className={styles.lowerLeftImage}
+                                />
+                            </div>
+                            <div>
+                                <img 
+                                src="/crm/crmDailyService.png" 
+                                alt=""
+                                className={styles.lowerLeftImage}
+                                />
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

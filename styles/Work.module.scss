@@ -113,8 +113,12 @@
         opacity: 1;
     }
 }
-
 .workMainContainer {
+    a {
+        text-decoration: none;
+        color: white;
+        z-index: 3;
+    }
     position: relative;
     background-color: rgb(29, 29, 29);
     width: 100vw;
@@ -148,9 +152,10 @@
     .workContainerTwo {
         grid-area: mainContent;
         display: grid;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         height: 100%;
-        grid-template-columns: 33% 33% 33%;
+        grid-template-columns: 33.33% 33.33% 33.33%;
         grid-template-rows: 100%;
         grid-template-areas: 
         'leftContent middleContent rightContent';
@@ -163,16 +168,19 @@
             position: absolute;
             top: 0px;
             grid-area: middleContent;
+            cursor: pointer;
         }
         
         .daveContainer {
             @extend %workImages;
             grid-area: leftContent;
+            cursor: pointer;
         }
         
         .crmContainer {
             @extend %workImages;
             grid-area: rightContent;
+            cursor: pointer;
         }
     }
     @keyframes delayVisibility {
