@@ -825,7 +825,7 @@
         }
         @keyframes makeCircleWholeScreenMobileTwo {
             0% {
-                z-index: 10;
+                z-index: 20;
                 top: -10px;
                 left: 0px;
                 position: absolute;
@@ -834,7 +834,7 @@
                 background-color: #1d1d1d00;
             }
             100% {
-                z-index: 10;
+                z-index: 20;
                 top: -10px;
                 left: 0px;
                 position: absolute;
@@ -845,19 +845,19 @@
         }
         @-webkit-keyframes makeCircleWholeScreenMobileTwo {
             0% {
-                z-index: 10;
+                position: absolute;
+                z-index: 20;
                 top: -10px;
                 left: 0px;
-                position: absolute;
                 min-height: 1000px;
                 min-width: 1000px;
                 background-color: #1d1d1d00;
             }
             100% {
-                z-index: 10;
+                position: absolute;
+                z-index: 20;
                 top: -10px;
                 left: 0px;
-                position: absolute;
                 min-height: 1000px;
                 min-width: 1000px;
                 background-color: #1d1d1d;
@@ -887,10 +887,15 @@
         .absoluteLeftCircle {
             grid-area: leftCircle;
             .homeMakeBig {
-                animation: makeCircleWholeScreenMobileTwo 5s forwards;
+                animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
             }
             .blackOverlay {
                 display: none;
+            }
+            .safariHomeMakeBig {
+                animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
             }
             .textInEffect {
                 animation: identifiermakeVisible 2s forwards;
@@ -928,6 +933,11 @@
             grid-area: rightCircle;
             .homeMakeBigRight {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+            }
+            .safariHomeMakeBigRight {
+                animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
             }
             .textInEffect {
                 animation: identifiermakeVisible 2s forwards;
