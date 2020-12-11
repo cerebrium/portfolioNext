@@ -3,12 +3,24 @@ import React, { useEffect, useState} from 'react'
 import { useRouter } from 'next/router'
 
 const Work: React.FunctionComponent = () => {
+    // checking browser compatability
+    const [ isChrome, setIsChrome ] = useState<boolean>(true)
+
+    // handle checking from browser being chrome on render
+    useEffect( () => {
+        let user = navigator.userAgent
+        if (!user.includes('Chrome')) {
+            setIsChrome(false)
+        }
+    }, [])
+
     // allow for routing
     const router = useRouter()
 
     // state left circle
     const [ homeClassname, setHomeClassName ] = useState<string>('aboutContainer')
     const [ leftCircleClass, setLeftCircleClass ] = useState<string>(styles.circleContainerLeft)
+    const [ leftOverlayClass, setLeftOverlayClass ] = useState<string>(styles.blackOverlay)
     
     // state right circle
     const [ homeClassNameRight, setHomeClassNameRight ] = useState<string>(styles.workContainer)
@@ -22,20 +34,30 @@ const Work: React.FunctionComponent = () => {
 
     // function for changing the classname for about
     const handleHomeClick = () => {
-        setHomeClassName(styles.homeMakeBig)
+        if (isChrome) {
+            setHomeClassName(styles.homeMakeBig)
+        } else {
+            setHomeClassName(styles.safariHomeMakeBig)
+            setLeftOverlayClass('none')
+        }
         setLeftCircleClass(styles.absoluteLeftCircle)
         setTimeout( () => {
             router.push('/')
-        }, 4000)
+        }, 5000)
     }
 
     // function for changing the classname for about
     const handleHomeClickRight = () => {
+        if (isChrome) {
+            setHomeClassNameRight(styles.homeMakeBigRight)
+        } else {
+            setHomeClassNameRight(styles.safariHomeMakeBigRight)
+        }
         setLeftCircleClassRight(styles.absoluteLeftCircleRight)
         setHomeClassNameRight(styles.homeMakeBigRight)
         setTimeout( () => {
             router.push('/about')
-        }, 4000)
+        }, 5000)
     }
 
     return (
@@ -49,7 +71,7 @@ const Work: React.FunctionComponent = () => {
                         <h2>Home</h2>
                     </div>
                 </div>
-                <div className={styles.blackOverlay}>
+                <div className={leftOverlayClass}>
 
                 </div>
                 <div className={styles.textInEffect}>

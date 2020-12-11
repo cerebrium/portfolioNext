@@ -3,6 +3,21 @@ import React, { useEffect, useState} from 'react'
 import { useRouter } from 'next/router'
 
 const About = () => {
+    // checking browser compatability
+    const [ isChrome, setIsChrome ] = useState<boolean>(true)
+
+    // handle checking from browser being chrome on render
+    useEffect( () => {
+        let user = navigator.userAgent
+        if (!user.includes('Chrome')) {
+            setIsChrome(false)
+        }
+    }, [])
+
+    useEffect( () => {
+        console.log(isChrome)
+    }, [isChrome])
+
     // allow for routing
     const router = useRouter()
 
@@ -11,11 +26,18 @@ const About = () => {
     const [ homeClassname, setHomeClassName ] = useState<string>('aboutContainer')
     const [ leftTextAppear, setLeftTextAppear ] = useState<string>(styles.leftTextAppear)
 
+    // safari left
+    const [ safaryHomeClassName, setSafariHomeClassName ] = useState('aboutContainer')
+
     // right style
     const [ rightClassName, setRightClassName ] = useState<string>(styles.workContainer)
     const [ rightOverAllClassName, setRightOverAllClassName ] = useState<string>(styles.circleContainerRight)
     const [ rightTextAppear, setRightTextAppear ] = useState<string>(styles.rightTextAppear)
 
+    // safari right
+    const [ safariRightClassName, setSafariRightClassName ] = useState<string>(styles.workContainer)
+
+    // initial setting of classes
     useEffect( () => {
         if (styles) {
             setHomeClassName(styles.aboutContainer)
@@ -24,7 +46,14 @@ const About = () => {
 
     // function for changing the classname for about
     const handleHomeClick = () => {
-        setHomeClassName(styles.homeMakeBig)
+        if (!isChrome) {
+            // safari
+            setHomeClassName(styles.homeSafariMakeBig)
+        } else {
+            // chrome
+            setHomeClassName(styles.homeMakeBig)
+        }
+
         setRightOverAllClassName(styles.dissapearPlease)
         setLeftTextAppear(styles.leftAppear)
         setTimeout( () => {
@@ -34,7 +63,14 @@ const About = () => {
     
     // function for changing the classname for about
     const rightClick = () => {
-        setRightClassName(styles.homeMakeBigDark)
+        if (!isChrome) {
+            // safari
+            setRightClassName(styles.safariHomeMakeBigDark)
+        } else {
+            //chrome
+            setRightClassName(styles.homeMakeBigDark)
+        }
+
         setHomeClassName(styles.dissapearPleaseLeft)
         setRightTextAppear(styles.rightAppear)
         setTimeout( () => {

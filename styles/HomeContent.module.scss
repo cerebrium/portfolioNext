@@ -62,18 +62,22 @@
 }
 @-webkit-keyframes homeMainBoxEffect {
     0% {
-        height: 0px;
-        width: 0px;
+        height: 15px;
+        width: 15px;
         min-height: 0px;
         min-width: 0px;
         padding: 0px;
+        background-color: white;
         border: 2px solid white;
         border-radius: 50%;
     }
-    50% {
+    20% {
+        height: 15px;
+        width: 15px;
+        min-height: 0px;
+        min-width: 0px;
+        background-color: white;
         padding: 0px;
-        height: 400px;
-        width: 0px;
         border: 2px solid white;
         border-radius: 50%;
     }
@@ -98,17 +102,6 @@
         opacity: 1;
     }
 }
-@keyframes changeBorder {
-    0% {
-        border-radius: 50%;
-    }
-    50% {
-        border-radius: 40%;
-    }
-    100% {
-        border-radius: 50%;
-    }
-}
 ////// styles
 @-webkit-keyframes delayVisibility {
     0% {
@@ -119,6 +112,17 @@
     }
     100% {
         opacity: 1;
+    }
+}
+@keyframes changeBorder {
+    0% {
+        border-radius: 50%;
+    }
+    50% {
+        border-radius: 40%;
+    }
+    100% {
+        border-radius: 50%;
     }
 }
 @-webkit-keyframes changeBorder {
@@ -257,6 +261,30 @@
             background-color: rgb(29, 29, 29);
         }
     }
+    @-webkit-keyframes makeCircleWholeScreen {
+        0% {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 2;
+            padding: 0;
+            min-width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgba(29, 29, 29, 0.616);
+        }
+        100% {
+            position: absolute;
+            z-index: 2;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 10000px;
+            height: 10000px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgb(29, 29, 29);
+        }
+    }
     
     @keyframes dimText {
         0% {
@@ -332,18 +360,22 @@
     }
     @-webkit-keyframes homeMainBoxEffect {
         0% {
-            height: 0px;
-            width: 0px;
+            height: 15px;
+            width: 15px;
             min-height: 0px;
             min-width: 0px;
             padding: 0px;
+            background-color: white;
             border: 2px solid white;
             border-radius: 50%;
         }
-        50% {
+        20% {
+            height: 15px;
+            width: 15px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
             padding: 0px;
-            height: 300px;
-            width: 0px;
             border: 2px solid white;
             border-radius: 50%;
         }
@@ -388,39 +420,43 @@
         }
         100% {
             padding: 0;
-            min-height: 200px;
-            width: 200px;
-            height: 200px;
+            min-height: 180px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 2px solid rgb(255, 255, 255);
-            background-color: rgba(29, 29, 29, 0.616);
+            background-color: rgba(29, 29, 29, 0.8);
         }
     }
     @-webkit-keyframes homeMainBoxEffect {
         0% {
-            height: 0px;
-            width: 0px;
+            height: 15px;
+            width: 15px;
             min-height: 0px;
             min-width: 0px;
             padding: 0px;
+            background-color: white;
             border: 2px solid white;
             border-radius: 50%;
         }
-        50% {
+        20% {
+            height: 15px;
+            width: 15px;
+            min-height: 0px;
+            min-width: 0px;
+            background-color: white;
             padding: 0px;
-            height: 200px;
-            width: 0px;
             border: 2px solid white;
             border-radius: 50%;
         }
         100% {
             padding: 0;
-            min-height: 200px;
-            width: 200px;
-            height: 200px;
+            min-height: 180px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 2px solid rgb(255, 255, 255);
-            background-color: rgba(29, 29, 29, 0.616);
+            background-color: rgb(29, 29, 29, 0.8);
         }
     }
     

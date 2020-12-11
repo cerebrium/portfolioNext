@@ -48,6 +48,46 @@
         max-height: 500px;
     }
 }
+@keyframes makeCircleWholeScreenMobile {
+    0% {
+        z-index: 10;
+        top: -10px;
+        left: 0px;
+        position: absolute;
+        min-height: 5000px;
+        min-width: 5000px;
+        background-color: #1d1d1d00;
+    }
+    100% {
+        z-index: 10;
+        top: -10px;
+        left: 0px;
+        position: absolute;
+        min-height: 5000px;
+        min-width: 5000px;
+        background-color: #1d1d1d;
+    }
+}
+@-webkit-keyframes makeCircleWholeScreenMobile {
+    0% {
+        z-index: 10;
+        top: -10px;
+        left: 0px;
+        position: absolute;
+        min-height: 5000px;
+        min-width: 5000px;
+        background-color: #1d1d1d00;
+    }
+    100% {
+        z-index: 10;
+        top: -10px;
+        left: 0px;
+        position: absolute;
+        min-height: 5000px;
+        min-width: 5000px;
+        background-color: #1d1d1d;
+    }
+}
 @keyframes homeMainBoxEffect {
     0% {
         opacity: 0;
@@ -194,6 +234,17 @@
             opacity: 1;
         }
     }
+    @-webkit-keyframes delayVisibility {
+        0% {
+            opacity: 0;
+        }
+        85% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
     
     .circleContainerLeft {
         grid-area: leftCircle;
@@ -261,6 +312,38 @@
             background-size: cover;
         }
     }
+    @-webkit-keyframes makeCircleWholeScreen {
+        0% {
+            z-index: 10;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: $heightVar;
+            width: $widthVar;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-image: url('./images/backgroundPortfolioColors.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        100% {
+            z-index: 10;
+            position: absolute;
+            left: -$positioningLeft;
+            top: -$positioningTop;
+            height: $offSetHeight;
+            width: $offSetWidth;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-image: url('./images/backgroundPortfolioColors.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    }
     $widthVarTwo: 200px;
     $heightVarTwo: 200px;
     $offSetHeightTwo: 10000px;
@@ -268,6 +351,28 @@
     $positioningLeftTwo: $offSetWidthTwo - ($offSetWidthTwo/1.2);
     $positioningTopTwo: $offSetWidthTwo - ($offSetWidthTwo/1.2);
     @keyframes makeCircleWholeScreenBlack {
+        0% {
+            z-index: 10;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            height: $heightVarTwo;
+            width: $widthVarTwo;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        100% {
+            z-index: 10;
+            position: absolute;
+            left: -$positioningLeftTwo;
+            top: -$positioningTopTwo;
+            height: $offSetHeightTwo;
+            width: $offSetWidthTwo;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    }
+    @-webkit-keyframes makeCircleWholeScreenBlack {
         0% {
             z-index: 10;
             position: absolute;
@@ -321,8 +426,40 @@
             background-color: #1D1D1D;
         }
     }
+    @-webkit-keyframes makeCircleWholeScreenRight {
+        0% {
+            z-index: 10;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            height: $heightVarRight;
+            width: $widthVarRight;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: black;
+        }
+        100% {
+            z-index: 10;
+            position: absolute;
+            right: -$positioningLeftRight;
+            top: -$positioningTopRight;
+            height: $offSetHeightRight;
+            width: $offSetWidthRight;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: #1D1D1D;
+        }
+    }
 
     @keyframes identifiermakeVisible {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes identifiermakeVisible {
         0% {
             opacity: 0;
         }
@@ -335,8 +472,14 @@
         .homeMakeBig {
             animation: makeCircleWholeScreen 5s forwards linear;
         }
+        .safariHomeMakeBig {
+            animation: makeCircleWholeScreenMobile 5s forwards linear;
+        }
         .blackOverlay {
             animation: makeCircleWholeScreenBlack 5s forwards linear;
+        }
+        .safariBlackOverlay {
+            display: none;
         }
         .textInEffect {
             animation: identifiermakeVisible 2s forwards;
@@ -379,6 +522,9 @@
     .absoluteLeftCircleRight {
         .homeMakeBigRight {
             animation: makeCircleWholeScreenRight 5s forwards linear;
+        }
+        .safariHomeMakeBigRight {
+            animation: makeCircleWholeScreenMobile 5s forwards linear;
         }
         .textInEffect {
             animation: identifiermakeVisible 2s forwards;
@@ -552,6 +698,7 @@
         100% {
             opacity: 1;
             padding: 0;
+            min-height: 90px;
             width: 90px;
             height: 90px;
             border-radius: 50%;
@@ -608,11 +755,10 @@
         background-color: rgb(29, 29, 29);
         width: 100vw;
         height: 100vh;
-        min-height: 700px;
         display: grid;
         overflow: hidden;
         grid-template-columns: 33% 33% 33%;
-        grid-template-rows: 25% 75%;
+        grid-template-rows: 15% 75%;
         grid-template-areas: 
         'leftCircle title rightCircle'
         'mainContent mainContent mainContent';
@@ -642,7 +788,7 @@
             display: grid;
             overflow: scroll;
             padding: 10px;
-            height: 100%;
+            height: 90%;
             width: 100vw;
             grid-template-columns: 100%;
             grid-template-rows: 350px 350px 350px;
@@ -656,12 +802,15 @@
                 position: relative;
                 grid-area: middleContent;
                 margin-left: -12px;
+                margin-top: 0px;
             }
             
             .daveContainer {
                 @extend %workImagesMobileTwo;
                 grid-area: leftContent;
                 margin-left: -12px;
+                padding-top: 0px;
+                margin-top: 0px;
             }
             
             .crmContainer {
@@ -669,6 +818,47 @@
                 grid-area: rightContent;
                 padding-bottom: 40px;
                 margin-left: -12px;
+                margin-top: 0px;
+            }
+        }
+        @keyframes makeCircleWholeScreenMobile {
+            0% {
+                z-index: 10;
+                top: -10px;
+                left: 0px;
+                position: absolute;
+                min-height: 1000px;
+                min-width: 1000px;
+                background-color: #1d1d1d00;
+            }
+            100% {
+                z-index: 10;
+                top: -10px;
+                left: 0px;
+                position: absolute;
+                min-height: 1000px;
+                min-width: 1000px;
+                background-color: #1d1d1d;
+            }
+        }
+        @-webkit-keyframes makeCircleWholeScreenMobile {
+            0% {
+                z-index: 10;
+                top: -10px;
+                left: 0px;
+                position: absolute;
+                min-height: 1000px;
+                min-width: 1000px;
+                background-color: #1d1d1d00;
+            }
+            100% {
+                z-index: 10;
+                top: -10px;
+                left: 0px;
+                position: absolute;
+                min-height: 1000px;
+                min-width: 1000px;
+                background-color: #1d1d1d;
             }
         }
         .circleContainerLeft {
@@ -678,7 +868,7 @@
             .aboutContainer {
                 margin: 10px;
                 border-radius: 50%;
-                animation: homeMainBoxEffectTwo 1s .5s forwards;
+                animation: homeMainBoxEffectTwo 3s .5s forwards;
                 animation-delay: 1s;
                 display: flex;
                 align-items: center;
@@ -692,6 +882,24 @@
                 }
             }
         }
+        .absoluteLeftCircle {
+            .homeMakeBig {
+                animation: makeCircleWholeScreenMobile 5s forwards;
+            }
+            .blackOverlay {
+                display: none;
+            }
+            .textInEffect {
+                animation: identifiermakeVisible 2s forwards;
+                display: block;
+                position: absolute;
+                left: 50px;
+                top: 60px;
+                font-size: 2em;
+                color: white;
+                z-index: 11;
+            }
+        }
         .circleContainerRight {
             z-index: 2;
             grid-area: rightCircle;
@@ -699,7 +907,7 @@
             .workContainer {
                 margin: 10px;
                 border-radius: 50%;
-                animation: homeMainBoxEffectTwo 1s .5s forwards;
+                animation: homeMainBoxEffectTwo 3s .5s forwards;
                 animation-delay: 1s;
                 display: flex;
                 align-items: center;
@@ -711,6 +919,21 @@
                     animation-duration: 2s;
                     font-size: 1.2em;
                 }
+            }
+        }
+        .absoluteLeftCircleRight {
+            .homeMakeBigRight {
+                animation: makeCircleWholeScreenMobile 5s forwards linear;
+            }
+            .textInEffect {
+                animation: identifiermakeVisible 2s forwards;
+                display: block;
+                position: absolute;
+                right: 50px;
+                top: 60px;
+                font-size: 2em;
+                color: white;
+                z-index: 11;
             }
         }
     }
