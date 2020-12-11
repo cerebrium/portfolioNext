@@ -478,15 +478,16 @@
         grid-area: body;
         overflow-y: auto;
         width: 100%;
-        min-height: 750px;
         height: 100%;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 30% 30% 30%;
+        grid-template-rows: 5% 30% 30% 30% 5%;
         grid-template-areas: 
+        '.'
         'middleCircle'
         'leftCircle'
-        'rightCircle';
+        'rightCircle'
+        '.';
         .circleContainerMiddle {
             margin: 0;
             padding: 0;

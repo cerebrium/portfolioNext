@@ -753,12 +753,12 @@
         background-color: aliceblue;
         overflow: hidden;
         background-color: rgb(29, 29, 29);
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         display: grid;
         overflow: hidden;
         grid-template-columns: 33% 33% 33%;
-        grid-template-rows: 15% 75%;
+        grid-template-rows: 15% 85%;
         grid-template-areas: 
         'leftCircle title rightCircle'
         'mainContent mainContent mainContent';
@@ -786,9 +786,9 @@
             justify-content: center;
             grid-area: mainContent;
             display: grid;
-            overflow: scroll;
+            overflow: auto;
             padding: 10px;
-            height: 90%;
+            height: 600px;
             width: 100vw;
             grid-template-columns: 100%;
             grid-template-rows: 350px 350px 350px;
@@ -808,6 +808,7 @@
             .daveContainer {
                 @extend %workImagesMobileTwo;
                 grid-area: leftContent;
+                position: relative;
                 margin-left: -12px;
                 padding-top: 0px;
                 margin-top: 0px;
@@ -816,7 +817,8 @@
             .crmContainer {
                 @extend %workImagesMobileTwo;
                 grid-area: rightContent;
-                padding-bottom: 40px;
+                position: relative;
+                padding-bottom: 30px;
                 margin-left: -12px;
                 margin-top: 0px;
             }

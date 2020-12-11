@@ -949,9 +949,9 @@
     }
     .aboutMainContainer {
         display: grid;
-        height: 100vh;
+        height: 100%;
         grid-template-columns: 19% 60% 20%;
-        grid-template-rows: 10% 80%;
+        grid-template-rows: 10% 90%;
         grid-template-areas: 
         'leftCircle title rightCircle'
         '. mainContent .'
@@ -961,7 +961,7 @@
         }
         .aboutContentContainer {
             font-size: 1em;
-            max-height: 90%;
+            max-height: 80%;
         }
         .circleContainerLeft {
             position: relative;
