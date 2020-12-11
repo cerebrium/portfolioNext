@@ -823,7 +823,7 @@
                 margin-top: 0px;
             }
         }
-        @keyframes makeCircleWholeScreenMobile {
+        @keyframes makeCircleWholeScreenMobileTwo {
             0% {
                 z-index: 10;
                 top: -10px;
@@ -843,7 +843,7 @@
                 background-color: #1d1d1d;
             }
         }
-        @-webkit-keyframes makeCircleWholeScreenMobile {
+        @-webkit-keyframes makeCircleWholeScreenMobileTwo {
             0% {
                 z-index: 10;
                 top: -10px;
@@ -886,7 +886,7 @@
         }
         .absoluteLeftCircle {
             .homeMakeBig {
-                animation: makeCircleWholeScreenMobile 5s forwards;
+                animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .blackOverlay {
                 display: none;
@@ -925,7 +925,7 @@
         }
         .absoluteLeftCircleRight {
             .homeMakeBigRight {
-                animation: makeCircleWholeScreenMobile 5s forwards linear;
+                animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
             }
             .textInEffect {
                 animation: identifiermakeVisible 2s forwards;

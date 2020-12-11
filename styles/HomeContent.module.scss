@@ -481,9 +481,8 @@
         height: 100%;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 5% 30% 30% 30% 5%;
+        grid-template-rows: 30% 30% 30% 5%;
         grid-template-areas: 
-        '.'
         'middleCircle'
         'leftCircle'
         'rightCircle'
