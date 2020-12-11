@@ -43,7 +43,7 @@ const Work: React.FunctionComponent = () => {
         setLeftCircleClass(styles.absoluteLeftCircle)
         setTimeout( () => {
             router.push('/')
-        }, 500000)
+        }, 5000)
     }
 
     // function for changing the classname for about
@@ -57,7 +57,7 @@ const Work: React.FunctionComponent = () => {
         setHomeClassNameRight(styles.homeMakeBigRight)
         setTimeout( () => {
             router.push('/about')
-        }, 500000)
+        }, 5000)
     }
 
     return (

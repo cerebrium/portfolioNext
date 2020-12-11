@@ -885,6 +885,7 @@
             }
         }
         .absoluteLeftCircle {
+            grid-area: leftCircle;
             .homeMakeBig {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
@@ -924,6 +925,7 @@
             }
         }
         .absoluteLeftCircleRight {
+            grid-area: rightCircle;
             .homeMakeBigRight {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
             }
