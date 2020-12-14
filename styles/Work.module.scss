@@ -803,16 +803,18 @@
         }
         @keyframes makeCircleWholeScreenMobileTwo {
             0% {
+                opacity: 0;
                 z-index: 20;
                 top: -10px;
                 left: 0px;
                 position: absolute;
                 height: 1500px;
                 width: 1000px;
-                background-color: #1d1d1d04;
+                background-color: #1d1d1d;
             }
             100% {
                 z-index: 20;
+                opacity: 1;
                 top: -10px;
                 left: 0px;
                 position: absolute;
