@@ -923,11 +923,15 @@
         0% {
             position: absolute;
             min-height: 1000px;
+            left: 0px;
+            top: 0px;
             min-width: 1000px;
             background-color: #1d1d1d00;
         }
         100% {
             position: absolute;
+            left: 0px;
+            top: 0px;
             min-height: 1000px;
             min-width: 1000px;
             background-color: #1d1d1d;
@@ -936,12 +940,16 @@
     @-webkit-keyframes makeCircleWholeScreen {
         0% {
             position: absolute;
+            left: 0px;
+            top: 0px;
             min-height: 1000px;
             min-width: 1000px;
             background-color: #1d1d1d00;
         }
         100% {
             position: absolute;
+            left: 0px;
+            top: 0px;
             min-height: 1000px;
             min-width: 1000px;
             background-color: #1d1d1d;
