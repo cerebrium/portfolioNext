@@ -807,40 +807,40 @@
                 top: -10px;
                 left: 0px;
                 position: absolute;
-                min-height: 1000px;
-                min-width: 1000px;
-                background-color: #1d1d1d00;
+                height: 1500px;
+                width: 1000px;
+                background-color: #1d1d1d04;
             }
             100% {
                 z-index: 20;
                 top: -10px;
                 left: 0px;
                 position: absolute;
-                min-height: 1000px;
-                min-width: 1000px;
+                height: 1500px;
+                width: 1000px;
                 background-color: #1d1d1d;
             }
         }
-        @-webkit-keyframes makeCircleWholeScreenMobileTwo {
-            0% {
-                position: absolute;
-                z-index: 20;
-                top: -10px;
-                left: 0px;
-                min-height: 1000px;
-                min-width: 1000px;
-                background-color: #1d1d1d00;
-            }
-            100% {
-                position: absolute;
-                z-index: 20;
-                top: -10px;
-                left: 0px;
-                min-height: 1000px;
-                min-width: 1000px;
-                background-color: #1d1d1d;
-            }
-        }
+        // @-webkit-keyframes makeCircleWholeScreenMobileTwo {
+        //     0% {
+        //         position: absolute;
+        //         z-index: 20;
+        //         top: -10px;
+        //         left: 0px;
+        //         min-height: 1000px;
+        //         min-width: 1000px;
+        //         background-color: #1d1d1d00;
+        //     }
+        //     100% {
+        //         position: absolute;
+        //         z-index: 20;
+        //         top: -10px;
+        //         left: 0px;
+        //         min-height: 1000px;
+        //         min-width: 1000px;
+        //         background-color: #1d1d1d;
+        //     }
+        // }
         .circleContainerLeft {
             grid-area: leftCircle;
             z-index: 2;
@@ -863,7 +863,7 @@
             }
         }
         .absoluteLeftCircle {
-            grid-area: leftCircle;
+            // grid-area: leftCircle;
             .homeMakeBig {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
@@ -906,7 +906,7 @@
             }
         }
         .absoluteLeftCircleRight {
-            grid-area: rightCircle;
+            // grid-area: rightCircle;
             .homeMakeBigRight {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
