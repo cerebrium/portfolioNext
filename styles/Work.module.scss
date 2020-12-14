@@ -804,20 +804,12 @@
         @keyframes makeCircleWholeScreenMobileTwo {
             0% {
                 z-index: 20;
-                opacity: 1;
-                top: -10px;
-                left: 0px;
-                position: absolute;
                 height: 1500px;
                 width: 1000px;
                 background-color: #1d1d1d00;
             }
             100% {
                 z-index: 20;
-                opacity: 1;
-                top: -10px;
-                left: 0px;
-                position: absolute;
                 height: 1500px;
                 width: 1000px;
                 background-color: #1d1d1d;
@@ -825,21 +817,13 @@
         }
         @-webkit-keyframes makeCircleWholeScreenMobileTwo {
             0% {
-                opacity: 1;
                 z-index: 20;
-                top: -10px;
-                left: 0px;
-                position: absolute;
                 height: 1500px;
                 width: 1000px;
                 background-color: #1d1d1d00;
             }
             100% {
                 z-index: 20;
-                opacity: 1;
-                top: -10px;
-                left: 0px;
-                position: absolute;
                 height: 1500px;
                 width: 1000px;
                 background-color: #1d1d1d;
@@ -868,7 +852,13 @@
         }
         .absoluteLeftCircle {
             // grid-area: leftCircle;
+            position: absolute;
+            top: -10px;
+            left: 0px;
             .homeMakeBig {
+                position: absolute;
+                top: -10px;
+                left: 0px;
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
                 -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
@@ -876,6 +866,9 @@
                 display: none;
             }
             .safariHomeMakeBig {
+                position: absolute;
+                top: -10px;
+                left: 0px;
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
                 -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
@@ -913,11 +906,20 @@
         }
         .absoluteLeftCircleRight {
             // grid-area: rightCircle;
+            position: absolute;
+            left: 0px;
+            top: 0px;
             .homeMakeBigRight {
+                position: absolute;
+                top: -10px;
+                left: 0px;
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
                 -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .safariHomeMakeBigRight {
+                position: absolute;
+                top: -10px;
+                left: 0px;
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
                 -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
