@@ -823,26 +823,28 @@
                 background-color: #1d1d1d;
             }
         }
-        // @-webkit-keyframes makeCircleWholeScreenMobileTwo {
-        //     0% {
-        //         position: absolute;
-        //         z-index: 20;
-        //         top: -10px;
-        //         left: 0px;
-        //         min-height: 1000px;
-        //         min-width: 1000px;
-        //         background-color: #1d1d1d00;
-        //     }
-        //     100% {
-        //         position: absolute;
-        //         z-index: 20;
-        //         top: -10px;
-        //         left: 0px;
-        //         min-height: 1000px;
-        //         min-width: 1000px;
-        //         background-color: #1d1d1d;
-        //     }
-        // }
+        @-webkit-keyframes makeCircleWholeScreenMobileTwo {
+            0% {
+                opacity: 0;
+                z-index: 20;
+                top: -10px;
+                left: 0px;
+                position: absolute;
+                height: 1500px;
+                width: 1000px;
+                background-color: #1d1d1d;
+            }
+            100% {
+                z-index: 20;
+                opacity: 1;
+                top: -10px;
+                left: 0px;
+                position: absolute;
+                height: 1500px;
+                width: 1000px;
+                background-color: #1d1d1d;
+            }
+        }
         .circleContainerLeft {
             grid-area: leftCircle;
             z-index: 2;
@@ -868,12 +870,14 @@
             // grid-area: leftCircle;
             .homeMakeBig {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
+                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .blackOverlay {
                 display: none;
             }
             .safariHomeMakeBig {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
+                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .textInEffect {
                 animation: identifiermakeVisible 2s forwards;
@@ -883,7 +887,7 @@
                 top: 60px;
                 font-size: 2em;
                 color: white;
-                z-index: 11;
+                z-index: 21;
             }
         }
         .circleContainerRight {
@@ -911,9 +915,11 @@
             // grid-area: rightCircle;
             .homeMakeBigRight {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
+                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .safariHomeMakeBigRight {
                 animation: makeCircleWholeScreenMobileTwo 5s forwards;
+                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .textInEffect {
                 animation: identifiermakeVisible 2s forwards;
@@ -923,7 +929,7 @@
                 top: 60px;
                 font-size: 2em;
                 color: white;
-                z-index: 11;
+                z-index: 21;
             }
         }
     }
