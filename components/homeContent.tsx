@@ -2,6 +2,7 @@ import styles from '../styles/HomeContent.module.scss'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Resume from '../public/resume.pdf'
 
 const HomeContent: React.FunctionComponent = () => {
     // checking browser compatability
@@ -59,16 +60,19 @@ const HomeContent: React.FunctionComponent = () => {
                             <a 
                                 href='https://github.com/cerebrium' 
                                 className={styles.whiteGithub}
+                                rel="noopener noreferrer"
                                 target='_blank'
                             ></a>
                             <a 
                                 href='https://www.linkedin.com/in/nicholasshankland/' 
                                 className={styles.whiteLinkedin}
+                                rel="noopener noreferrer"
                                 target='_blank'
                             ></a>
                             <a 
-                                href='https://www.linkedin.com/in/nicholasshankland/' 
+                                href={Resume} 
                                 className={styles.whiteDoc}
+                                rel="noopener noreferrer"
                                 target='_blank'
                             ></a>
                         </div>
