@@ -887,15 +887,13 @@
         .absoluteLeftCircle {
             grid-area: leftCircle;
             .homeMakeBig {
-                animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
-                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+                animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .blackOverlay {
                 display: none;
             }
             .safariHomeMakeBig {
-                animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
-                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+                animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .textInEffect {
                 animation: identifiermakeVisible 2s forwards;
@@ -932,12 +930,10 @@
         .absoluteLeftCircleRight {
             grid-area: rightCircle;
             .homeMakeBigRight {
-                animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
-                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+                animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .safariHomeMakeBigRight {
-                animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
-                -webkit-animation: makeCircleWholeScreenMobileTwo 5s forwards linear;
+                animation: makeCircleWholeScreenMobileTwo 5s forwards;
             }
             .textInEffect {
                 animation: identifiermakeVisible 2s forwards;
