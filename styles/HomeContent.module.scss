@@ -158,6 +158,7 @@
         .homeMainBox {
             border-radius: 50%;
             animation: homeMainBoxEffect 3s .5s forwards;
+            cursor: pointer;
             .textContainer {
                 @extend %textContaineCircles;
                 display: flex;
@@ -206,6 +207,7 @@
         height: 100%;
         @extend %centerThings;
         .aboutContainer {
+            cursor: pointer;
             border-radius: 50%;
             animation: homeMainBoxEffect 3s .5s forwards;
             animation-delay: 1s;
@@ -225,6 +227,7 @@
         height: 100%;
         @extend %centerThings;
         .workContainer {
+            cursor: pointer;
             border-radius: 50%;
             animation: homeMainBoxEffect 2s .5s forwards;
             animation-delay: 1s;
